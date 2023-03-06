@@ -100,7 +100,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun crearCsv() {
         try {
-            //crear el archivo PDF dentro de la carpeta PDF
+            //crear el archivo CSV en la carpeta descargas
             val csvArchivo = File(
                 Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
                 "Data_${System.currentTimeMillis()}.csv"
