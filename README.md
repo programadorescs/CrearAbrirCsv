@@ -2,7 +2,7 @@
 
 Los archivos CSV son una forma común de almacenar y compartir datos tabulares en formato de texto plano. En Kotlin, crear y abrir archivos CSV es una tarea fácil gracias a las clases y funciones disponibles.
 
-##Crear un archivo CSV en Kotlin
+## Crear un archivo CSV en Kotlin
 
 Para crear un archivo CSV en Kotlin, podemos utilizar la clase OutputStreamWriter y FileOutputStream para escribir datos en un archivo.
 
@@ -40,7 +40,7 @@ Para crear un archivo CSV en Kotlin, podemos utilizar la clase OutputStreamWrite
 
 En este ejemplo, estamos creando un archivo llamado Data_${System.currentTimeMillis()}.csv con tres columnas: Nombre, Edad y Ciudad. Luego, agregamos dos filas con información ficticia. Finalmente, cerramos el escritor para guardar los cambios y mostrar un mensaje de exito.
 
-##Abrir un archivo CSV en Kotlin
+## Abrir un archivo CSV en Kotlin
 
 Para abrir un archivo CSV en Kotlin, podemos utilizar la clase InputStreamReader, BufferedReader y la función readLines() para leer el archivo. La ubicación del archivo la obtendremos de la Uri.
 
@@ -50,10 +50,6 @@ Para abrir un archivo CSV en Kotlin, podemos utilizar la clase InputStreamReader
         return BufferedReader(isr).readLines()
     }
 
-##Conclusión
+## Conclusión
 
 En resumen, crear y abrir archivos CSV en Kotlin es una tarea sencilla gracias a las bibliotecas disponibles en el lenguaje. Con un poco de conocimiento de programación, puedes utilizar estas herramientas para manejar datos tabulares de manera efectiva en tus proyectos.
-
-** Tabla de contenido **
-
-[TOC]
