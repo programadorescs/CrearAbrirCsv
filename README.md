@@ -6,37 +6,39 @@ Los archivos CSV son una forma común de almacenar y compartir datos tabulares e
 
 Para crear un archivo CSV en Kotlin, podemos utilizar la clase OutputStreamWriter y FileOutputStream para escribir datos en un archivo.
 
-    private fun crearCsv() {
-        try {
-            //crear el archivo CSV en la carpeta descargas
-            val csvArchivo = File(
-                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
-                "Data_${System.currentTimeMillis()}.csv"
-            )
+```kotlin
+private fun crearCsv() {
+    try {
+        //crear el archivo CSV en la carpeta descargas
+        val csvArchivo = File(
+            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
+            "Data_${System.currentTimeMillis()}.csv"
+        )
 
-            val osw = OutputStreamWriter(FileOutputStream(csvArchivo))
+        val osw = OutputStreamWriter(FileOutputStream(csvArchivo))
 
-            // Escribir encabezados
-            osw.append("Nombre;Apellido;Edad;\n")
-            // Escribir datos
-            osw.append("Juana;López;21;\n")
-            osw.append("María;Pena;30;\n")
-            osw.append("Julieta;Ramos;40;\n")
+        // Escribir encabezados
+        osw.append("Nombre;Apellido;Edad;\n")
+        // Escribir datos
+        osw.append("Juana;López;21;\n")
+        osw.append("María;Pena;30;\n")
+        osw.append("Julieta;Ramos;40;\n")
 
-            // Limpiar (vaciar) el escritor
-            osw.flush()
-            // Cierra el escritor
-            osw.close()
+        // Limpiar (vaciar) el escritor
+        osw.flush()
+        // Cierra el escritor
+        osw.close()
 
-            mostrarMensaje(
-                "EXITO", csvArchivo.absolutePath
-            )
-        } catch (e: Exception) {
-            mostrarMensaje(
-                "ERROR", e.message.toString()
-            )
-        }
+        mostrarMensaje(
+            "EXITO", csvArchivo.absolutePath
+        )
+    } catch (e: Exception) {
+        mostrarMensaje(
+            "ERROR", e.message.toString()
+        )
     }
+}
+```
 
 En este ejemplo, estamos creando un archivo llamado Data_${System.currentTimeMillis()}.csv con tres columnas: Nombre, Edad y Ciudad. Luego, agregamos dos filas con información ficticia. Finalmente, cerramos el escritor para guardar los cambios y mostrar un mensaje de exito.
 
@@ -44,11 +46,13 @@ En este ejemplo, estamos creando un archivo llamado Data_${System.currentTimeMil
 
 Para abrir un archivo CSV en Kotlin, podemos utilizar la clase InputStreamReader, BufferedReader y la función readLines() para leer el archivo. La ubicación del archivo la obtendremos de la Uri.
 
+```kotlin
     fun leerCsv(uri: Uri): List<String> {
         val csvFile = contentResolver.openInputStream(uri)
         val isr = InputStreamReader(csvFile)
         return BufferedReader(isr).readLines()
     }
+```
 
 ## Conclusión
 
