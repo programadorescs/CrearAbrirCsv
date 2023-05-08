@@ -2,6 +2,12 @@
 
 Los archivos CSV son una forma común de almacenar y compartir datos tabulares en formato de texto plano. En Kotlin, crear y abrir archivos CSV es una tarea fácil gracias a las clases y funciones disponibles.
 
+## Requisitos
+
+- Android Studio Flamingo | 2022.2.1 Patch 1 o superior.
+- Gradle 8.0.1 o superior.
+- Kotlin 1.8.20 o superior.
+
 ## Crear un archivo CSV en Kotlin
 
 Para crear un archivo CSV en Kotlin, podemos utilizar la clase OutputStreamWriter y FileOutputStream para escribir datos en un archivo.
